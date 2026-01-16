@@ -3,151 +3,131 @@ import streamlit as st
 st.set_page_config(
     page_title="CEEKAY Prime Holdings",
     page_icon="🏛",
-    layout="wide",
+    layout="wide"
 )
 
-# ---------------------------------------------------
-# FULL BLACK GOLD PREMIUM STYLING
-# ---------------------------------------------------
+# ----------------------------------------------------
+# GLOBAL STYLING
+# ----------------------------------------------------
 st.markdown("""
 <style>
 
-html, body, [class*="css"]  {
-    background-color: #000 !important;
-    color: #ffffff !important;
+html, body, .main {
+    background-color: #000000 !important;
 }
 
-/* Main container */
-.main {
-    background-color: #000 !important;
-    padding-top: 20px;
+h1, h2, h3, p, span, div {
+    color: white !important;
 }
 
-/* Center everything */
+/* Center container */
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Premium gold title */
+/* Logo box */
+.logo-box img {
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255,215,0,0.3);
+}
+
+/* Title */
 .title {
-    font-size: 48px;
+    font-size: 50px;
     font-weight: 900;
     text-align: center;
     color: #FFD700;
-    text-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
-    font-family: 'Arial Black', sans-serif;
+    text-shadow: 0px 0px 30px rgba(255,215,0,0.7);
+    margin-top: 20px;
 }
 
-/* Tagline */
 .tagline {
     text-align: center;
-    color: #bbbbbb;
+    color: #D9D9D9;
     font-size: 18px;
-    margin-top: -10px;
+    margin-bottom: 40px;
 }
 
 /* Gold line */
-.goldline {
-    width: 180px;
+.gold-line {
+    width: 240px;
     height: 3px;
     background: linear-gradient(90deg, transparent, #FFD700, transparent);
-    margin: 20px auto 40px auto;
-    border-radius: 10px;
+    margin: 0 auto 40px auto;
 }
 
-/* Premium card box */
-.box {
-    background: linear-gradient(180deg, #111, #000);
-    border: 1px solid #222;
-    border-radius: 16px;
-    padding: 30px;
-    transition: 0.25s;
-    box-shadow: 0px 0px 12px rgba(255, 215, 0, 0.08);
+/* BUSINESS CARD */
+.card {
+    background-color: #0D0D0D;
+    border: 1px solid #333;
+    border-radius: 14px;
+    padding: 40px 25px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 0 12px rgba(255,215,0,0.12);
 }
-
-.box:hover {
-    border: 1px solid #FFD700;
-    box-shadow: 0px 0px 18px rgba(255, 215, 0, 0.3);
+.card:hover {
+    border-color: #FFD700;
+    box-shadow: 0 0 20px rgba(255,215,0,0.4);
 }
 
 /* Icons */
-.bigicon {
-    font-size: 65px;
+.icon {
+    font-size: 55px;
     color: #FFD700;
-    text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
-/* Business titles */
-.btitle {
-    text-align: center;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-/* Description */
-.desc {
-    text-align: center;
-    color: #aaaaaa;
-    margin-bottom: 25px;
-    font-size: 15px;
-}
-
-/* Gold button */
+/* Buttons */
 button[kind="secondary"] {
     background-color: #FFD700 !important;
     color: black !important;
     border-radius: 10px !important;
     font-weight: 700 !important;
-    height: 45px !important;
+    height: 48px !important;
+    font-size: 16px !important;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# ---------------------------------------------------
-# HEADER
-# ---------------------------------------------------
+# ----------------------------------------------------
+# HEADER SECTION
+# ----------------------------------------------------
 st.markdown("<div class='title'>CEEKAY PRIME HOLDINGS</div>", unsafe_allow_html=True)
 st.markdown("<div class='tagline'>Your Trusted Group of Services</div>", unsafe_allow_html=True)
-
-# Gold divider line
-st.markdown("<div class='goldline'></div>", unsafe_allow_html=True)
+st.markdown("<div class='gold-line'></div>", unsafe_allow_html=True)
 
 # Centered Logo
-st.markdown("<div class='center'>", unsafe_allow_html=True)
-st.image("ceekay_prime_logo.png", width=230)
+st.markdown("<div class='center logo-box'>", unsafe_allow_html=True)
+st.image("ceekay_prime_logo.png", width=250)
 st.markdown("</div>", unsafe_allow_html=True)
 
+
+# ----------------------------------------------------
+# BUSINESS TILES
+# ----------------------------------------------------
 st.write("")
 st.write("")
 
-# ---------------------------------------------------
-# TWO GOLD PREMIUM TILES
-# ---------------------------------------------------
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("<div class='box'>", unsafe_allow_html=True)
-    st.markdown("<div class='bigicon'>🚗</div>", unsafe_allow_html=True)
-    st.markdown("<div class='btitle'>CEEKAY Eco Trails</div>", unsafe_allow_html=True)
-    st.markdown("<div class='desc'>Transport • Tours • Daily Hire</div>", unsafe_allow_html=True)
-
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
+    st.markdown("<div class='icon'>🚘</div>", unsafe_allow_html=True)
+    st.markdown("<h3>CEEKAY Eco Trails</h3>", unsafe_allow_html=True)
+    st.markdown("<p>Transport • Tours • Daily Hire</p>", unsafe_allow_html=True)
     if st.button("Enter Eco Trails System", key="eco"):
         st.switch_page("https://ceekay-eco-trails-ghpv7plux3hj7jze957ugn.streamlit.app/")
-
     st.markdown("</div>", unsafe_allow_html=True)
 
 with col2:
-    st.markdown("<div class='box'>", unsafe_allow_html=True)
-    st.markdown("<div class='bigicon'>🏠</div>", unsafe_allow_html=True)
-    st.markdown("<div class='btitle'>CEEKAY Homes</div>", unsafe_allow_html=True)
-    st.markdown("<div class='desc'>Girls’ Accommodation & Student Hostel</div>", unsafe_allow_html=True)
-
+    st.markdown("<div class='card'>", unsafe_allow_html=True)
+    st.markdown("<div class='icon'>🏘️</div>", unsafe_allow_html=True)
+    st.markdown("<h3>CEEKAY Homes</h3>", unsafe_allow_html=True)
+    st.markdown("<p>Girls’ Accommodation & Student Hostel</p>", unsafe_allow_html=True)
     if st.button("Enter CEEKAY Homes System", key="homes"):
         st.info("CEEKAY Homes system coming soon!")
-
     st.markdown("</div>", unsafe_allow_html=True)
