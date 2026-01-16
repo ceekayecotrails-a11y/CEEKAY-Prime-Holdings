@@ -1,82 +1,127 @@
 import streamlit as st
 
-# ------------------------------
-# PAGE CONFIG
-# ------------------------------
 st.set_page_config(
     page_title="CEEKAY Prime Holdings",
     page_icon="🏛",
-    layout="centered",
+    layout="wide",
 )
 
-# ------------------------------
-# CUSTOM CSS (Black & Gold Theme)
-# ------------------------------
+# ---------------------------------------------------
+# Custom CSS for Premium Black-Gold Theme
+# ---------------------------------------------------
 st.markdown("""
 <style>
+
 body {
     background-color: #000000;
 }
-.big-tile {
-    width: 160px;
-    height: 160px;
+
+/* Gold Glow Title */
+.title-glow {
+    font-size: 42px;
+    text-align: center;
+    font-weight: 700;
+    color: #FFD700;
+    text-shadow: 0px 0px 15px rgba(255, 215, 0, 0.6);
+    margin-top: 10px;
+}
+
+.tagline {
+    text-align: center;
+    color: #cccccc;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+/* Section Containers */
+.section {
     background-color: #111111;
-    border: 2px solid #FFD700;
+    border: 1px solid #333333;
     border-radius: 16px;
-    padding: 20px;
-    cursor: pointer;
-    text-align: center;
+    padding: 25px;
+    margin: 15px 0px;
+    transition: 0.3s;
 }
-.big-tile:hover {
+.section:hover {
     background-color: #1a1a1a;
+    border-color: #FFD700;
 }
-.tile-icon {
-    font-size: 55px;
-    margin-bottom: 10px;
-}
-.logo {
-    text-align: center;
-    margin-bottom: 30px;
-}
-.title-text {
-    font-size: 32px;
-    font-weight: bold;
+
+/* Icons */
+.big-icon {
+    font-size: 70px;
     color: #FFD700;
     text-align: center;
-    margin-bottom: 10px;
 }
-.sub-text {
-    color: #cccccc;
+
+/* Section Titles */
+.section-title {
     text-align: center;
-    font-size: 16px;
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 10px;
 }
+
+.section-desc {
+    text-align: center;
+    color: #aaaaaa;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.gold-btn {
+    background-color: #FFD700;
+    color: black;
+    font-weight: 700;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+}
+.gold-btn:hover {
+    background-color: #ffea77;
+    color: black;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
-# ------------------------------
+# ---------------------------------------------------
 # HEADER
-# ------------------------------
-st.markdown("<div class='title-text'>CEEKAY PRIME HOLDINGS</div>", unsafe_allow_html=True)
-st.markdown("<div class='sub-text'>Your Trusted Group of Services</div>", unsafe_allow_html=True)
+# ---------------------------------------------------
+st.markdown("<div class='title-glow'>CEEKAY PRIME HOLDINGS</div>", unsafe_allow_html=True)
+st.markdown("<div class='tagline'>Your Trusted Group of Services</div>", unsafe_allow_html=True)
 
-# ------------------------------
-# LOGO PLACEHOLDER (Your Black-Gold Logo)
-# ------------------------------
-st.image("ceekay_prime_logo.png", width=180)  # replace when you upload actual logo
-
+# Logo
+st.image("ceekay_prime_logo.png", width=200)
 
 st.write("")
 st.write("")
 
-# ------------------------------
-# TWO BIG TILES
-# ------------------------------
-col1, col2 = st.columns(2, gap="large")
+# ---------------------------------------------------
+# BUSINESS SECTIONS
+# ---------------------------------------------------
+col1, col2 = st.columns(2)
 
 with col1:
-    if st.button("🚗\nCEEKAY Eco Trails", use_container_width=True):
+    st.markdown("<div class='section'>", unsafe_allow_html=True)
+    st.markdown("<div class='big-icon'>🚗</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-title'>CEEKAY Eco Trails</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-desc'>Your daily travel, hire, and tourism service partner.</div>", unsafe_allow_html=True)
+
+    if st.button("Enter Eco Trails System", key="eco", use_container_width=True):
         st.switch_page("https://ceekay-eco-trails-ghpv7plux3hj7jze957ugn.streamlit.app/")
 
+    st.markdown("</div>", unsafe_allow_html=True)
+
 with col2:
-    if st.button("🏠\nCEEKAY Homes", use_container_width=True):
-        st.info("CEEKAY Homes system is coming soon!")
+    st.markdown("<div class='section'>", unsafe_allow_html=True)
+    st.markdown("<div class='big-icon'>🏠</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-title'>CEEKAY Homes</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-desc'>Girls’ accommodation and student hostel service.</div>", unsafe_allow_html=True)
+
+    if st.button("Enter CEEKAY Homes System", key="homes", use_container_width=True):
+        st.info("CEEKAY Homes system coming soon!")
+
+    st.markdown("</div>", unsafe_allow_html=True)
